@@ -1,15 +1,19 @@
 package com.example.depinjection.example1
 
-import kotlinx.coroutines.Job
+import javax.inject.Inject
 
 class Activity {
 
-    lateinit var computer: Computer
+    @Inject
     lateinit var keyboard: Keyboard
 
+    @Inject
+    lateinit var monitor: Monitor
+
+    @Inject
+    lateinit var mouse: Mouse
+
     init {
-        Component().inject(this)
+        DaggerNewComponent.create().inject(this)
     }
-
-
 }

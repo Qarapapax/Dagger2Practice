@@ -4,14 +4,12 @@ import kotlinx.coroutines.Job
 
 class Activity {
 
-    val monitor = Monitor()
-    val keyboard = Keyboard()
-    val mouse = Mouse()
-    val computerTower = ComputerTower(
-        Storage(),
-        Memory(),
-        Processor()
-    )
+    lateinit var computer: Computer
+    lateinit var keyboard: Keyboard
 
-    val computer = Computer(monitor, computerTower, keyboard, mouse)
+    init {
+        Component().inject(this)
+    }
+
+
 }

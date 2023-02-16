@@ -2,6 +2,7 @@ package com.example.depinjection.example2.di
 
 import android.content.Context
 import com.example.depinjection.example2.presentation.MainActivity
+import com.example.depinjection.example2.presentation.MainActivity2
 import dagger.BindsInstance
 import dagger.Component
 
@@ -10,6 +11,8 @@ import dagger.Component
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
+
+    fun inject(activity2: MainActivity2)
 
     @Component.Factory
     interface ApplicationComponentFactory {

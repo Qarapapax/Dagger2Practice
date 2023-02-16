@@ -21,7 +21,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private val component by lazy {
-        (application as ExampleApp).component
+        (application as ExampleApp).component.activityComponentFactory().create("GASHGALDAKH")
     }
 
 

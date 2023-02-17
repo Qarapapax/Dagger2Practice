@@ -21,14 +21,14 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private val component by lazy {
-        (application as ExampleApp).component.activityComponentFactory().create("GASHGALDAKH")
+        (application as ExampleApp).component.activityComponentFactory().create("ID2","NAME 2" )
     }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         viewModel.method()
         viewModel2.method()
 

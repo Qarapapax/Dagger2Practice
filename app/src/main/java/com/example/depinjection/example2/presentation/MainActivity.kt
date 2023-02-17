@@ -2,6 +2,7 @@ package com.example.depinjection.example2.presentation
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val component by lazy {
-        (application as ExampleApp).component.activityComponentFactory().create("DUMBELEY")
+        (application as ExampleApp).component.activityComponentFactory().create("ID1","NAME 1" )
     }
 
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewModel.method()
         viewModel2.method()
-        findViewById<TextView>(R.id.tv_helloWorld).setOnClickListener {
+        findViewById<Button>(R.id.main_activity_button).setOnClickListener {
             Intent(this, MainActivity2::class.java).apply {
                 startActivity(intent)
             }
